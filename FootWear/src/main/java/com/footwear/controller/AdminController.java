@@ -104,7 +104,7 @@ public class AdminController {
 		item.setCategory(category);
 		item.setPrice(Float.parseFloat(price));
 		addProductService.updateItem(item);
-		
+		System.out.println("item updated");
 		return "redirect:/ViewProducts";
 		
 	}
