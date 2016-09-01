@@ -38,7 +38,8 @@ Enter Name/Email ID: <input type="text"  ng-model="search">&nbsp&nbsp<span class
             <td>{{resource.price}}</td>
             <td><img src="resources/images/{{resource.itemId}}.jpg" style="width:100px;height:100px;"/></td>
             <td><a href="viewSelectedItem?id={{resource.itemId}}">View Products</a></td>
-            <td><a href="addtocart?id={{resource.itemId}}">Add To Cart</a></td>
+            
+            
          
     </table>
 </div>

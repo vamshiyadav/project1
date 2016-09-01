@@ -24,7 +24,7 @@
     <link href="./resources/css/style.css" rel="stylesheet" media="screen">
     <script data-require="angular.js@1.0.x" src="http://code.angularjs.org/1.0.7/angular.min.js" data-semver="1.0.7"></script>
 
-  <%@ include file="adminhead.jsp"%> 
+  <%@include file="header2.jsp" %> 
 </head>
 <body>
 
@@ -45,6 +45,7 @@
              <td>${item.category}</td>
              <td>${item.price}</td>
             <td><img src="resources/images/${item.itemId}.jpg" style="width:100px;height:100px;"/></td>
+            <td><a href="addtocart?id=${item.itemId}">Add To Cart</a></td>
         </tr>    
     </table>
 </div>
