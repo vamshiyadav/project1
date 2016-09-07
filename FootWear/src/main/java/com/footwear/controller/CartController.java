@@ -38,6 +38,7 @@ public class CartController {
 		Cart cart=customer.getCart();
 		Item item = addProductService.getItemById(Integer.parseInt(id));
 		CartItem cartItem=new CartItem();
+		cartItem.setCart(cart);
 		cartItem.setItem(item);
 		cartItem.setQuantity(1);
 		cartItem.setTotalPrice(item.getPrice());
@@ -48,13 +49,16 @@ public class CartController {
 	@RequestMapping("/viewCart")
 	public ModelAndView displayCart() throws JsonGenerationException, JsonMappingException, IOException
 	{
+		System.out.println("displaying cart items");
 		String loggedInUserName=SecurityContextHolder.getContext().getAuthentication().getName();
 		Customer customer=customerService.getCustomerByName(loggedInUserName);
 		Cart cart=customer.getCart();
 		int cartId = cart.getCartId();
 		List<CartItem> list = cartItemService.getCartItemByCartId(cartId);
+		System.out.println(list);
 		ObjectMapper mapper = new ObjectMapper();
 		String listJSON = mapper.writeValueAsString(list);
+		System.out.println("cart items are called"+listJSON);
 		return new ModelAndView("cartProducts","CartItemsKey",listJSON);
 	}
 	

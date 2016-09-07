@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 public class CartItem implements Serializable{
 	/**
@@ -24,6 +26,7 @@ public class CartItem implements Serializable{
 	private double totalPrice;
 	@ManyToOne
 	@JoinColumn(name="cartId")
+	@JsonIgnore
 	private Cart cart;
 	public Cart getCart() {
 		return cart;

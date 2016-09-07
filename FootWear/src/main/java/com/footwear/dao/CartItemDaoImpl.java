@@ -29,6 +29,7 @@ public class CartItemDaoImpl implements CartItemDao{
 		String hql = "from CartItem where CartId = '"+cartId+"' ";
 		Query query = session.createQuery(hql);
 		List<CartItem> list = query.list();
+		System.out.println("daoimpl"+list);
 		return list;
 		
 	}
