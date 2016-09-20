@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<!-- Executed when webFlow is triggered -->
+	<on-start>
+		<evaluate expression="customerDaoImpl.initFlow()" result="flowScope.customer" />
+	</on-start>
+
+	<!-- if not specified the first view state is the starting state -->
+	<view-state id="start" view="signUp" model="flowScope.customer">
+		<transition on="submit" to="validate" />
+	</view-state>
+
+	<action-state id="validate">
+		<evaluate expression="customerDaoImpl.addCustomer(customer)"></evaluate>
+		<transition on="success" to="welcome" />
+		<transition on="failure" to="start" />
+	</action-state>
+
+	<!-- <view-state id="confirmDetails" view="confirmDetails" model="flowScope.user">
+		<transition on="edit" to="start" />
+		<transition on="submit" to="welcome" />
+	</view-state> -->
+	
+	<end-state id="welcome" view="homePage" />
+	<end-state id="toHome" view="externalRedirect:contextRelative:index.jsp" />
+
+	<!-- these events are available in every state -->
+	<global-transitions>
+		<transition on="home" to="toHome" />
+	</global-transitions>
+</flow>

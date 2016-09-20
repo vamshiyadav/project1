@@ -46,13 +46,13 @@ public class HomeController {
 		return new ModelAndView("login");
 	}
 	//this is for signup, it goes to controller with a spring forms
-	@RequestMapping("/signUp")
+	/*@RequestMapping("/signUp")
 	public ModelAndView bd()
 	{
 		Customer customer=new Customer();
 		System.out.println("signup() method called");
 		return new ModelAndView("signUp","customerObj",customer);
-	}
+	}*/
 	//in this the obj frst map with the obj name
 	@RequestMapping("/CustomerCheck")
 	public ModelAndView CustomerCheck(Principal principal) throws JsonGenerationException, JsonMappingException, IOException
@@ -79,7 +79,7 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping("/Register")
+	/*@RequestMapping("/Register")
 	public ModelAndView gd(@Valid@ModelAttribute("customerObj") Customer customer,BindingResult br)
 	{
 		
@@ -92,7 +92,7 @@ public class HomeController {
 		customerService.addCustomer(customer);
 		return new ModelAndView("signUp");
 		
-	}
+	}*/
 	@RequestMapping("/login")
 	public String loginMethod()
 	{

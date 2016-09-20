@@ -20,8 +20,25 @@ public class CustomerDaoImpl implements CustomerDao{
 
 	@Autowired
 	SessionFactory sessionFactory;
+	
+	public Customer initFlow(){
+		return new Customer();
+	}
 	//saving the customer
-	public void addCustomer(Customer customer) {
+	public String addCustomer(Customer customer) {
+		String status="Success";
+		if(customer.getUsername().isEmpty())
+		{
+			return "failure";
+		}
+		if(customer.getPassword().isEmpty())
+		{
+			return "failure";
+		}
+		if(customer.getEmailid().isEmpty())
+		{
+			return "failure";
+		}
 		Session session=sessionFactory.getCurrentSession();
 		Transaction transaction=session.beginTransaction();
 		customer.setEnabled(true);
@@ -34,6 +51,7 @@ public class CustomerDaoImpl implements CustomerDao{
 		customer.setCart(cart);
 		transaction.commit();
 		System.out.println("Done saving the customer");
+		return status;
 		
 		
 		

@@ -20,9 +20,9 @@ public class Customer implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id@GeneratedValue
 	private int customerid;
-	@NotEmpty(message="username should not be empty")
+	
 	private String username;
-	@NotEmpty(message="emailid should not be empty")
+	
 	private String emailid;
 	private boolean enabled;
 	@OneToOne(cascade=CascadeType.ALL)
