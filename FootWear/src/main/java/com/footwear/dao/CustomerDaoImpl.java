@@ -26,18 +26,18 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 	//saving the customer
 	public String addCustomer(Customer customer) {
-		String status="Success";
+		String status="success";
 		if(customer.getUsername().isEmpty())
 		{
-			return "failure";
+			status= "failure";
 		}
 		if(customer.getPassword().isEmpty())
 		{
-			return "failure";
+			status="failure";
 		}
 		if(customer.getEmailid().isEmpty())
 		{
-			return "failure";
+			status="failure";
 		}
 		Session session=sessionFactory.getCurrentSession();
 		Transaction transaction=session.beginTransaction();

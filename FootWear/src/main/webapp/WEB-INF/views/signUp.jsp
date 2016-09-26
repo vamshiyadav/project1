@@ -19,10 +19,10 @@ margin-left:40%;
 <div id=center1>
 <table>
 <form:form commandName="customer" >
-<tr><td>UserName:</td><td><form:input path="username"></form:input><form:errors path="username" style="color:blue"></form:errors></td></tr><br>
-<tr><td>Password:</td><td><form:password path="password"></form:password><form:errors path="password" style="color:blue"></form:errors></td></tr><br>
-<tr><td>EmailId:</td><td><form:input path="emailid"></form:input><form:errors path="emailid" style="color:blue"></form:errors></td></tr><br>
-<tr><td><input class="col-offset-3" type="submit" name="_eventId=submit" value="Register"/></td></tr>
+<tr><td>UserName:</td><td><form:input path="username"></form:input></td></tr><br>
+<tr><td>Password:</td><td><form:password path="password"></form:password></td></tr><br>
+<tr><td>EmailId:</td><td><form:input path="emailid"></form:input></td></tr><br>
+<tr><td><input class="col-offset-3" type="submit" name="_eventId_submit" value="Register"/></td></tr>
 </form:form>
 </table>
 </div>

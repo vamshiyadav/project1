@@ -14,9 +14,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 
 public class Customer implements Serializable{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@Id@GeneratedValue
 	private int customerid;

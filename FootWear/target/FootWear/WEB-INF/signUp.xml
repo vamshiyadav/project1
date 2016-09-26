@@ -25,7 +25,7 @@
 		<transition on="submit" to="welcome" />
 	</view-state> -->
 	
-	<end-state id="welcome" view="redirect:/homePage" />
+	<end-state id="welcome" view="homePage" />
 	<end-state id="toHome" view="externalRedirect:contextRelative:index.jsp" />
 
 	<!-- these events are available in every state -->
